@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { motion } from 'framer-motion';
 import { CheckCircle, Send } from "lucide-react";
-import { cvApi } from "../../api/cvApi";
+import emailjs from '@emailjs/browser';
 
 export default function ContactSection() {
     const [form, setForm] = useState({name: '', email: '', message: ''});
@@ -14,8 +14,28 @@ export default function ContactSection() {
         e.preventDefault();
         setIsLoading(true);
         setError(null);
+
+        const templateParams = {
+            recruiter_name: form.name,
+            recruiter_email: form.email,
+            message: form.message,
+        };
+        
         try {
-            await cvApi.contactForm(form);
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_NOTIFY,
+                templateParams,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+    
+            emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_CONFIRM,
+                templateParams,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            ).catch((err) => console.warn('Confirmation email failed:', err));
+
             setSuccess(true);
             setForm({ name: '', email: '', message: '' });
         } catch {

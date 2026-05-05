@@ -34,7 +34,11 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
                 )}
               </div>
             </div>
-            <p className="text-text-muted text-sm leading-relaxed mb-3">{project.description}</p>
+            <p className="text-text-muted text-sm leading-relaxed mb-3">
+              <ul>
+                {project.description.map((line, idx) => (<li key={idx}>{line}</li>))}
+              </ul>
+            </p>
             {project.techStack && (
               <div className="flex flex-wrap gap-1">
                 {project.techStack.split(',').map((tech) => (

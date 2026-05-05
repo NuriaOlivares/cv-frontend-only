@@ -1,5 +1,4 @@
 export interface Profile {
-    id: number;
     fullName: string;
     title: string;
     summary: string;
@@ -20,7 +19,7 @@ export interface Experience {
     id: number;
     role: string;
     company: string;
-    description?: string;
+    description?: string[];
     startDate: string;
     endDate?: string;
 }
@@ -28,7 +27,7 @@ export interface Experience {
 export interface Project {
     id: number;
     name: string;
-    description: string;
+    description: string[];
     techStack?: string;
     githubUrl?: string;
     url?: string;

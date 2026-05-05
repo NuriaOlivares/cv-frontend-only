@@ -29,7 +29,11 @@ export default function ExperienceSection({ experiences }: { experiences: Experi
               </span>
             </div>
             {exp.description && (
-              <p className="text-text-muted text-sm leading-relaxed whitespace-pre-wrap">{exp.description}</p>
+              <p className="text-text-muted text-sm leading-relaxed whitespace-pre-wrap">
+                <ul>
+                {exp.description.map((line, idx) => (<li key={idx}>{line}</li>))}
+                </ul>
+              </p>
             )}
           </div>
         ))}

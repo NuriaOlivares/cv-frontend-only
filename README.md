@@ -8,7 +8,6 @@ Built with React, TypeScript, and Tailwind CSS.
 - **React 18** + TypeScript + Vite
 - **Tailwind CSS v3** — dark/light mode via CSS variables
 - **Framer Motion** — page and section animations
-- **Axios** — API calls with HttpOnly cookie auth
 - **React Router** — client-side routing
 - **Vitest** + Testing Library — unit tests
 
@@ -16,17 +15,13 @@ Built with React, TypeScript, and Tailwind CSS.
 
 | Route | Access | Description |
 |-------|--------|-------------|
-| `/login` | Public | Login page with recruiter credentials hint |
-| `/` | VIEWER + ADMIN | Full CV view |
-| `/admin` | ADMIN only | Content management panel |
+| `/` | VIEWER | Full CV view |
 
 ## Features
 
 - 🌙 Dark / light mode toggle
-- 🤖 AI chat assistant (ask about Nuria's experience)
 - 📥 CV PDF download
 - 📬 Contact form with email confirmation
-- ✏️ Admin panel — CRUD for experiences, projects, skills
 
 ## Local Setup
 
@@ -39,7 +34,9 @@ npm install
 
 Create `.env`:
 ```
-VITE_API_URL=http://localhost:8080
+VITE_EMAILJS_PUBLIC_KEY
+VITE_EMAILJS_TEMPLATE_NOTIFY
+VITE_EMAILJS_TEMPLATE_CONFIRM
 ```
 
 Run:
@@ -56,6 +53,6 @@ npm run test:run
 
 ## Deployment
 
-Deployed as a Static Site on [Railway](https://railway.com).
+Deployed as a Static Site on [Netlify](https://app.netlify.com/).
 Build command: `npm run build`
 Publish directory: `dist`
