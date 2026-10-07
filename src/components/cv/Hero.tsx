@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, PhoneCall } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Phone, PhoneCall } from 'lucide-react';
 import type { Profile } from '../../types/cv.types';
 
 export default function Hero({ profile }: { profile: Profile }) {
@@ -42,6 +42,13 @@ export default function Hero({ profile }: { profile: Profile }) {
             <Github size={16} />
             GitHub
           </a>
+        )}
+        {profile.github && (
+          <p
+            className="flex items-center gap-2 text-text-muted hover:text-text transition-colors text-sm">
+            <MapPin size={16} />
+            Dubai, UAE
+          </p>
         )}
       </div>
     </div>
