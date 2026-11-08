@@ -9,13 +9,28 @@ export const useProfile = (): UseProfileReturn => {
   const profile: Profile = {
     fullName: "Nuria Olivares",
     title: "Senior Software Engineer | Full Stack",
-    summary: "Full-stack Software Engineer with 4+ years delivering end-to-end features across Java/Spring Boot backends and Angular/React frontends in large-scale, high-availability enterprise environments. Proven track record designing and owning RESTful APIs, micro-services architectures, and production-critical systems serving millions of users. Experienced in CI/CD pipelines, cloud infrastructure (AWS), observability practices, and cross-functional collaboration in agile teams. Background in Engineering Physics brings a rigorous, systems-thinking approach to complex technical problems, trained in probabilistic modeling, signal processing, and mathematical methods. Founded and built a SaaS platform end-to-end as sole technical owner.",
+    summary: "Software Engineer with 4+ years of experience building production systems in Java/Spring Boot, TypeScript/Angular, React, and Python, including a SaaS platform I founded and owned end-to-end as CTO. Engineering Physics background with additional training in AI/ML and experience developing Python-based data workflows.Experienced in RESTful APIs, micro-services, AWS infrastructure, Docker, CI/CD, and distributed enterprise systems. Owning total delivery of production systems: from architecture and backend/frontend development through cloud deployment and production support.",
     email: "nuriaolivaresroyo@gmail.com",
     phone: "+971 502828579",
     linkedin: "https://www.linkedin.com/in/nuria-olivares-royo/",
     github: "https://github.com/NuriaOlivares",
   
     experiences: [
+      {
+        id: 0,
+        role: "Full Stack Product Engineer",
+        company: "ATOM Technologies",
+        description: [
+          "Working on the development, deployment, and integration of full-stack applications using JavaScript, NestJS, TypeORM, and React, alongside AWS cloud infrastructure and AI-assisted development tools.",
+          "Analyzed end-to-end monorepo architecture and deployment workflows through infrastructure-as-code, without relying on the AWS Management Console.",
+          "Executed production deployment of an application, including database and S3 data migration from QA to production.",
+          "Configured AWS services and infrastructure, including S3 and Amazon Cognito, enabling Microsoft Single Sign-On (SSO).",
+          "Developed a Jira Forge application and enabled API integrations using OAuth 2.0 authentication.",
+          "Recreated and configured application dashboards as part of the production rollout.",
+          "Worked with AWS services including CloudFormation, CodeBuild, CodePipeline, ECR, ECS, CloudFront, CloudWatch, RDS, ALB, VPC, Secrets Manager, SNS, SQS, and SES."
+        ],
+        startDate: "2026-10"
+      },
       {
         id: 1,
         role: "Senior Software Engineer",
@@ -125,14 +140,21 @@ export const useProfile = (): UseProfileReturn => {
       },
       {
         id: 3,
-        institution: "HarvardX (via edX)",
-        degree: "CS50's Introduction to Programming with Python",
-        startDate: "2026-06",
-        endDate: "2026-07",
-        displayOrder: 3,
+        institution: "Polytechnic University of Catalonia (UPC)",
+        degree: "Bachelor's in Engineering Physics",
+        startDate: "2016-09",
+        endDate: "2020-06",
+        displayOrder: 1,
       },
       {
         id: 4,
+        institution: "DeepLearning.AI / Stanford Online",
+        degree: "Machine Learning Specialization",
+        startDate: "2026-10",
+        displayOrder: 3,
+      },
+      {
+        id: 5,
         institution: "HarvardX (via edX)",
         degree: "CS50's Introduction to Artificial Intelligence with Python",
         startDate: "2026-07",
@@ -140,7 +162,7 @@ export const useProfile = (): UseProfileReturn => {
         displayOrder: 4,
       },
       {
-        id: 5,
+        id: 6,
         institution: "Deutsches Elektronen-Synchrotron (DESY)",
         degree: "Summer Research Program (scholarship)",
         location: "Hamburg, Germany",
